@@ -119,8 +119,14 @@ for(let i = 0 ; i<likeButton.length ; i++){
             posts[i].likes++
             ciao.innerHTML = `${posts[i].likes}`
             console.log(posts[i].likes);
-            likedPost.push(posts[i].id);
-            console.log(likedPost)
+           
+
+            if (!(likedPost.includes(posts[i].id))){
+
+                likedPost.push(posts[i].id);
+                console.log(likedPost);
+
+            }
         
             }
     })
