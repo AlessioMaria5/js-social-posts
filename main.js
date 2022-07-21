@@ -56,6 +56,8 @@ const posts = [
     }
 ];
 
+
+
 const container = document.getElementById('container');
 
 
@@ -82,19 +84,25 @@ for(let i = 0 ; i < posts.length ; i++){
             <div class="post__footer">
                 <div class="likes js-likes">
                     <div class="likes__cta">
-                        <a class="like-button  js-like-button" href="#" data-postid="1">
+                        <a class="like-button  js-like-button" href="#" data-postid="${posts.id}">
                             <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                             <span class="like-button__label">Mi Piace</span>
                         </a>
                     </div>
                     <div class="likes__counter">
-                        Piace a <b id="like-counter-1" class="js-likes-counter">${posts[i].likes}</b> persone
+                        Piace a <b id="like-counter-${posts[i].id}" class="js-likes-counter">${posts[i].likes}</b> persone
                     </div>
                 </div> 
-            </div>`
+                </div>`
+
+
+
 }
 
+// let ciao =    document.getElementsById("like-counter-1");
+
 let likeButton = document.getElementsByClassName('js-like-button')
+let x = false;
 
 for(let i = 0 ; i<likeButton.length ; i++){
 
@@ -102,14 +110,16 @@ for(let i = 0 ; i<likeButton.length ; i++){
     function(event){
 
     event.preventDefault();
-    likeButton[i].classList.add('like-button--liked')
-    
-});
+    this.classList.add('like-button--liked')
 
-}
-let myLikes = posts[i].likes;
-if(likeButton.classList('like-button')) {
-
-    myLikes++
+    if (likeButton[i].classList.contains('like-button--liked')){
+        let ciao = document.getElementById(`like-counter-${posts[i].id}`)
+        console.log(ciao);
+        posts[i].likes++
+        ciao.innerHTML = `${posts[i].likes}`
+        console.log(posts[i].likes);
+    
+        }
     
 }
+
