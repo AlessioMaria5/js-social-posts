@@ -94,20 +94,22 @@ for(let i = 0 ; i < posts.length ; i++){
             </div>`
 }
 
-let likeButton = document.querySelector('.like-button')
+let likeButton = document.getElementsByClassName('js-like-button')
 
-for(let i = 0 ; i<posts.length ; i++){
+for(let i = 0 ; i<likeButton.length ; i++){
 
-    likeButton.addEventListener('click',
+    likeButton[i].addEventListener('click',
     function(event){
 
     event.preventDefault();
-    likeButton.classList.add('like-button--liked')
-    posts.likes = 90;
-    console.log(posts.likes);
+    likeButton[i].classList.add('like-button--liked')
     
-
 });
 
+}
+let myLikes = posts[i].likes;
+if(likeButton.classList('like-button')) {
 
+    myLikes++
+    
 }
