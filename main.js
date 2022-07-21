@@ -67,17 +67,17 @@ for(let i = 0 ; i < posts.length ; i++){
     post.innerHTML = `<div class="post__header">
                         <div class="post-meta">                    
                             <div class="post-meta__icon">
-                                <img class="profile-pic" src="https://unsplash.it/300/300?image=15" alt="Phil Mangione">                    
+                                <img class="profile-pic" src="${posts[i].author.image}">                    
                             </div>
                             <div class="post-meta__data">
                                 <div class="post-meta__author">${posts[i].author.name}</div>
-                                <div class="post-meta__time">4 mesi fa</div>
+                                <div class="post-meta__time">${posts[i].author.name}</div>
                             </div>                    
                         </div>
                     </div>
-                    <div class="post__text">Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.</div>
+                    <div class="post__text">${posts[i].content}</div>
             <div class="post__image">
-                <img src="https://unsplash.it/600/300?image=171" alt="">
+                <img src="${posts[i].media}" alt="">
             </div>
             <div class="post__footer">
                 <div class="likes js-likes">
@@ -88,8 +88,26 @@ for(let i = 0 ; i < posts.length ; i++){
                         </a>
                     </div>
                     <div class="likes__counter">
-                        Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
+                        Piace a <b id="like-counter-1" class="js-likes-counter">${posts[i].likes}</b> persone
                     </div>
                 </div> 
             </div>`
+}
+
+let likeButton = document.querySelector('.like-button')
+
+for(let i = 0 ; i<posts.length ; i++){
+
+    likeButton.addEventListener('click',
+    function(event){
+
+    event.preventDefault();
+    likeButton.classList.add('like-button--liked')
+    posts.likes = 90;
+    console.log(posts.likes);
+    
+
+});
+
+
 }
