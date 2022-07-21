@@ -112,14 +112,13 @@ for(let i = 0 ; i<likeButton.length ; i++){
     event.preventDefault();
     this.classList.add('like-button--liked')
 
-    if (likeButton[i].classList.contains('like-button--liked')){
-        let ciao = document.getElementById(`like-counter-${posts[i].id}`)
-        console.log(ciao);
-        posts[i].likes++
-        ciao.innerHTML = `${posts[i].likes}`
-        console.log(posts[i].likes);
-    
-        }
-    
+        if (likeButton[i].classList.contains('like-button--liked')){
+            let ciao = document.getElementById(`like-counter-${posts[i].id}`)
+            console.log(ciao);
+            posts[i].likes++
+            ciao.innerHTML = `${posts[i].likes}`
+            console.log(posts[i].likes);
+        
+            }
+    })
 }
-
