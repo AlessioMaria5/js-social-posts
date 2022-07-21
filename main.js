@@ -56,6 +56,7 @@ const posts = [
     }
 ];
 
+let likedPost = []
 
 
 const container = document.getElementById('container');
@@ -118,6 +119,8 @@ for(let i = 0 ; i<likeButton.length ; i++){
             posts[i].likes++
             ciao.innerHTML = `${posts[i].likes}`
             console.log(posts[i].likes);
+            likedPost.push(posts[i].id);
+            console.log(likedPost)
         
             }
     })
